@@ -4,47 +4,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Your Name - Portfolio</title>
+    <title>Grant Hendricks - Projects</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <header>
-        <h1>Your Name</h1>
+        <h1>Grant Hendricks</h1>
         <nav>
             <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Brief description about yourself, your skills, and your background.</p>
-    </section>
+    <main>
+        <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="project-tile" style="background-image: url('images/blue.jpg');">
+                <div class="icon"><img src="images/virustotal.png" alt="VirusTotal"></div>
+                <div class="project-content">
+                    <h3>VirusTotal API</h3>
+                    <p>An EXE and an Installer to be able to right click a file and use your API key to scan the file.
+                    </p>
+                </div>
+                <a class="project-link" href="https://github.com/gnhen/virusTotalAPI" target="_blank"></a>
+            </div>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <ul class="project-list">
-            <li><a href="https://link-to-your-project1.com" target="_blank">Project 1</a></li>
-            <li><a href="https://link-to-your-project2.com" target="_blank">Project 2</a></li>
-            <li><a href="https://link-to-your-project3.com" target="_blank">Project 3</a></li>
-        </ul>
-    </section>
+            <!-- Project 2 -->
+            <div class="project-tile" style="background-image: url('images/quizbackground.png');">
+                <div class="icon"><img src="images/quizicon.png" alt="QuizLoader"></div>
+                <div class="project-content">
+                    <h3>Canvas Quiz Loader</h3>
+                    <p>Automatically load correct answers from previous quiz attempts.</p>
+                </div>
+                <a class="project-link" href="https://github.com/gnhen/canvasQuizLoader" target="_blank"></a>
+            </div>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
-    </section>
+            <!-- Project 3 -->
+            <div class="project-tile" style="background-image: url('images/lightbluebackground.png');">
+                <div class="icon"><img src="images/cameraicon.png" alt="Camera"></div>
+                <div class="project-content">
+                    <h3>Force Screenshot</h3>
+                    <p>This is a program to take a screenshot of your screen. Works great for when the subject of the
+                        screenshot blurs itself with printscreen. </p>
+                </div>
+                <a class="project-link" href="https://github.com/gnhen/forceScreenshot" target="_blank"></a>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-tile" style="background-image: url('images/qrcodebackground.png');">
+                <div class="icon"><img src="images/iconQRcode.png" alt="QR Code"></div>
+                <div class="project-content">
+                    <h3>QR Code Browser Extension</h3>
+                    <p>Generate a QR code for the current website. Firefox and Chrome only. </p>
+                </div>
+                <a class="project-link" href="https://github.com/gnhen/qrCodeExtension" target="_blank"></a>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="project-tile" style="background-image: url('images/volumebackground.png');">
+                <div class="icon"><img src="images/volumeicon2.png" alt="Volume"></div>
+                <div class="project-content">
+                    <h3>Volume Control</h3>
+                    <p>Python program that changes the system volume when the space bar is pressed </p>
+                </div>
+                <a class="project-link" href="https://github.com/gnhen/volumeControl" target="_blank"></a>
+            </div>
+
+            <!-- Project 6 -->
+            <div class="project-tile" style="background-image: url('images/comingsoonbg.png');">
+                <div class="icon"><img src="images/spinner.png" alt="Buffer"></div>
+                <div class="project-content">
+                    <h3>Coming soon...</h3>
+                    <p>Check back shortly!</p>
+                </div>
+                <a class="project-link" href="index.html"></a>
+            </div>
+        </div>
+    </main>
 
     <footer>
-        <p>&copy; 2024 Your Name. All rights reserved.</p>
+        <p>© 2024 Grant Hendricks. All rights reserved.</p>
     </footer>
-
-    <script src="scripts.js"></script>
 </body>
 
 </html>

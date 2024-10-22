@@ -1,75 +1,136 @@
-* {
+/* General page styling */
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
-    padding: 0 20px;
+    background-color: #656565;
+    /* Background color */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
-    background-color: #333;
-    color: #fff;
     padding: 20px;
+    background-color: #515151;
+    /* Navbar background color */
+    color: white;
     text-align: center;
-}
-
-header h1 {
-    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 nav ul {
     list-style: none;
     padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
 nav ul li a {
-    color: #fff;
     text-decoration: none;
-}
-
-section {
-    margin: 20px 0;
-}
-
-h2 {
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.project-list {
-    list-style: none;
-    padding: 0;
-}
-
-.project-list li {
-    margin-bottom: 10px;
-}
-
-.project-list li a {
-    text-decoration: none;
-    color: #3498db;
-    transition: color 0.3s;
-}
-
-.project-list li a:hover {
-    color: #2980b9;
+    color: white;
+    font-weight: bold;
 }
 
 footer {
-    background-color: #333;
-    color: #fff;
     text-align: center;
     padding: 10px;
-    margin-top: 20px;
+    background-color: #515151;
+    /* Footer background color */
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Main content layout */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+/* Style for the projects grid centered in the screen */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Three columns */
+    gap: 20px;
+    /* Adjusted to maintain uniform spacing */
+    padding: 20px;
+    background-color: #656565;
+    /* Same color as the body background */
+    max-width: 66vw;
+    /* Set to 66% of the viewport width */
+    margin: 0 auto;
+    /* Center the grid */
+    justify-items: center;
+    /* Center the items in the grid */
+}
+
+/* Style for each project tile */
+.project-tile {
+    position: relative;
+    padding: 20px;
+    color: white;
+    height: 200px;
+    /* Adjusted height */
+    width: 300px;
+    /* Adjusted width */
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.project-tile::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.project-content {
+    z-index: 2;
+}
+
+.project-tile h3 {
+    margin-bottom: 5px;
+    font-size: 1.5em;
+}
+
+.project-tile p {
+    font-size: 1em;
+}
+
+.project-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+
+/* Move the icon to the top-left corner */
+.icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+}
+
+.icon img {
+    width: 40px;
+    height: 40px;
 }
