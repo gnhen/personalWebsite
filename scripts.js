@@ -1,19 +1,24 @@
-// Add mousemove event listener for the tilting effect
+// scripts.js
+
 document.querySelectorAll('.project-tile').forEach(tile => {
     tile.addEventListener('mousemove', (event) => {
-        const rect = tile.getBoundingClientRect();
-        const x = event.clientX - rect.left; // X position within the tile
-        const y = event.clientY - rect.top; // Y position within the tile
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        const rotateX = ((y - centerY) / centerY) * 10; // Adjust the rotation factor as needed
-        const rotateY = ((x - centerX) / centerX) * -10;
+        const { offsetWidth: width, offsetHeight: height } = tile;
+        const { offsetX, offsetY } = event;
 
-        tile.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        // Calculate the center position
+        const x = (offsetX / width) - 0.5; // Normalize to -0.5 to 0.5
+        const y = (offsetY / height) - 0.5; // Normalize to -0.5 to 0.5
+
+        // Adjust rotation values to tilt away from the mouse
+        const tiltX = -y * 30; // Range: -15 to 15 (inverted)
+        const tiltY = x * 30; // Range: -15 to 15 (normal)
+
+        // Set the CSS transform property
+        tile.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
     });
 
-    // Reset the tile's transform when the mouse leaves
     tile.addEventListener('mouseleave', () => {
-        tile.style.transform = 'rotateX(0) rotateY(0)';
+        // Reset rotation when the mouse leaves the tile
+        tile.style.transform = 'rotateX(0deg) rotateY(0deg)';
     });
 });
