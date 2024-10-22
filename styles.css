@@ -3,7 +3,6 @@ body {
     margin: 0;
     padding: 0;
     background-color: #656565;
-    /* Background color */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -12,7 +11,6 @@ body {
 header {
     padding: 20px;
     background-color: #515151;
-    /* Navbar background color */
     color: white;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -36,7 +34,6 @@ footer {
     text-align: center;
     padding: 10px;
     background-color: #515151;
-    /* Footer background color */
     color: white;
     position: relative;
     bottom: 0;
@@ -56,18 +53,11 @@ main {
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    /* Three columns */
-    gap: 20px;
-    /* Adjusted to maintain uniform spacing */
+    gap: 20px 40px;
     padding: 20px;
-    background-color: #656565;
-    /* Same color as the body background */
-    max-width: 66vw;
-    /* Set to 66% of the viewport width */
-    margin: 0 auto;
-    /* Center the grid */
-    justify-items: center;
-    /* Center the items in the grid */
+    max-width: 900px;
+    perspective: 1000px;
+    /* Ensure perspective for the 3D effect */
 }
 
 /* Style for each project tile */
@@ -75,10 +65,7 @@ main {
     position: relative;
     padding: 20px;
     color: white;
-    height: 200px;
-    /* Adjusted height */
-    width: 300px;
-    /* Adjusted width */
+    height: 250px;
     background-size: cover;
     background-position: center;
     border-radius: 10px;
@@ -87,6 +74,11 @@ main {
     justify-content: flex-end;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     overflow: hidden;
+    transform-style: preserve-3d;
+    /* Preserve 3D effect */
+    transition: transform 0.1s ease-out;
+    /* Smooth transition for mouse movement */
+    will-change: transform;
 }
 
 .project-tile::before {
@@ -133,4 +125,11 @@ main {
 .icon img {
     width: 40px;
     height: 40px;
+}
+
+/* Add mouse hover effect */
+.project-tile:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05);
+    transition: transform 0.1s ease-out;
 }
