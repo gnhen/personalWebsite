@@ -161,10 +161,14 @@ function updateBackgroundColor(event) {
 // Add mousemove event listener
 window.addEventListener('mousemove', updateBackgroundColor);
 
-// scripts.js
+
 document.addEventListener("DOMContentLoaded", function () {
-    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    if (isMobile) {
+    var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    var viewAnyways = localStorage.getItem('viewAnyways');
+
+    // Check if on mobile and the user hasn't chosen to view the full site
+    if (isMobile && viewAnyways !== 'true') {
         window.location.href = "mobile.html";
     }
 });
+
