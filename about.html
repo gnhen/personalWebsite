@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>About - Grant Hendricks</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Draggable.min.js"></script>
 </head>
 
 <body>
@@ -22,9 +24,12 @@
 
     <main>
         <div class="about-container">
-            <img src="images/portrait.jpg" alt="Portrait of Grant Hendricks" class="portrait">
-            <h2>Grant Hendricks</h2>
-            <p>Cybersecurity Student with a passion for aligning security architecture plans and processes with security
+            <div class="portrait-container">
+                <img id="knob" src="images/portrait2.png" alt="Portrait of Grant Hendricks" class="portrait">
+                <h2 class="name">Grant Hendricks</h2>
+            </div>
+            <p class="content">Cybersecurity Student with passion for aligning security architecture plans and processes
+                with security
                 standards and business goals. <b>Extensive</b> experience developing and testing software.</p>
         </div>
     </main>
@@ -32,6 +37,8 @@
     <footer>
         <p>&copy; 2024 Grant Hendricks. All rights reserved.</p>
     </footer>
+
+    <script src="scripts.js"></script>
 </body>
 
 </html>

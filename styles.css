@@ -332,30 +332,94 @@ main {
 /* About Me page styling */
 .about-container {
     background: #fff;
+    /* White background */
     border-radius: 5px;
-    padding: 60px;
-    /* Increased padding */
+    /* Rounded corners */
+    padding: 40px;
+    /* Padding around content */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* Shadow for depth */
     text-align: center;
-    /* Center content */
-    margin: 20px auto;
-    /* Center the container on the page */
-    max-width: 1200px;
-    /* Increased max width */
+    /* Center all text */
+    margin: 20px;
+    /* Space around the container */
+    max-width: 800px;
+    /* Maximum width */
 }
 
-/* Portrait Image Styling */
+.portrait-container {
+    display: flex;
+    flex-direction: column;
+    /* Stack items vertically */
+    justify-content: center;
+    /* Center the portrait */
+    align-items: center;
+    /* Center the portrait vertically */
+    margin-bottom: 20px;
+    /* Space between portrait and text */
+    position: relative;
+    /* Allows absolute positioning if needed */
+}
+
 .portrait {
-    width: 300px;
-    /* Increased width */
-    height: 300px;
-    /* Increased height */
+    width: 200px;
+    /* Adjust as necessary */
+    height: auto;
+    /* Maintain aspect ratio */
     border-radius: 50%;
-    /* Keep it circular */
-    margin: 0 auto;
-    /* Center the image */
+    /* For a circular look */
     display: block;
-    /* Ensure it is block level for centering */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    /* Optional shadow for effect */
+    /* Center image in the parent */
+    margin: 0;
+    /* Center horizontally, remove auto margin */
+    transition: transform 0.3s ease;
+    /* Smooth transition for rotation */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Add box shadow for better visibility */
+    position: relative;
+    /* Ensures z-index works correctly if needed */
+    cursor: grab;
+    /* Shows grabbable cursor /*
+}
+
+.name {
+    margin-top: 20px;
+    /* Space between portrait and name */
+    color: black;
+    /* Set color for the name */
+    font-size: 1.5em;
+    /* Adjust font size as needed */
+    text-align: center;
+    /* Center the text */
+}
+
+.content {
+    font-size: 1em;
+    /* Font size for content */
+    margin: 0;
+    /* Remove default margin */
+}
+
+
+.contact-container {
+    position: absolute;
+    /* Change to absolute for dragging */
+    background-color: white;
+    /* Background color */
+    border: 1px solid #ccc;
+    /* Border for visibility */
+    border-radius: 8px;
+    /* Rounded corners */
+    padding: 20px;
+    /* Padding for content */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* Shadow for depth */
+    cursor: grab;
+    /* Initial cursor */
+}
+
+.contact-container h2,
+.contact-container p {
+    margin: 0;
+    /* Remove margin for better positioning */
 }
