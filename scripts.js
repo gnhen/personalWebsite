@@ -160,3 +160,11 @@ function updateBackgroundColor(event) {
 
 // Add mousemove event listener
 window.addEventListener('mousemove', updateBackgroundColor);
+
+// scripts.js
+document.addEventListener("DOMContentLoaded", function () {
+    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if (isMobile) {
+        window.location.href = "mobile.html";
+    }
+});

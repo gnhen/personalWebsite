@@ -1,0 +1,53 @@
+<!-- mobile.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile View</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #2f2f2f;
+        }
+
+        .container {
+            background-color: #787878;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .message {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="message">Thank you for visiting my website. This experience is best viewed on a computer.</div>
+        <button class="btn" onclick="window.location.href = 'index.html'">View Anyways</button>
+    </div>
+</body>
+
+</html>
