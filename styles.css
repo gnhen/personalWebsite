@@ -29,6 +29,11 @@ audio:not([controls]) {
     display: none;
 }
 
+:root {
+    --base-color: #656565;
+    /* Default background color */
+}
+
 html {
     font-family: sans-serif;
     -ms-text-size-adjust: 100%;
@@ -202,9 +207,8 @@ table {
     border-spacing: 0;
 }
 
-/* General page styling */
 body {
-    background-color: #656565;
+    background-color: var(--base-color);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -212,7 +216,8 @@ body {
 
 header {
     padding: 20px;
-    background-color: #515151;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Will be updated by JavaScript */
     color: white;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -235,7 +240,8 @@ nav ul li a {
 footer {
     text-align: center;
     padding: 10px;
-    background-color: #515151;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Will be updated by JavaScript */
     color: white;
     position: relative;
     bottom: 0;
@@ -422,4 +428,79 @@ main {
 .contact-container p {
     margin: 0;
     /* Remove margin for better positioning */
+}
+
+
+.box {
+    width: 300px;
+    height: 300px;
+    background: crimson;
+    color: white;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+}
+
+.box:hover::after,
+.box:hover::before {
+    transform: scale(1, 1);
+}
+
+.box::after,
+.box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    /* Start from the top */
+    right: 0;
+    /* Align to the right */
+    bottom: 0;
+    /* Align to the bottom */
+    left: 0;
+    /* Align to the left */
+    transition: all 0.5s;
+}
+
+/* Create the vertical lines */
+.box::after {
+    border-right: 1px solid yellow;
+    /* Right border */
+    border-left: 1px solid yellow;
+    /* Left border */
+    transform: scale(1, 0);
+    /* Start hidden */
+}
+
+/* Create the horizontal lines */
+.box::before {
+    border-top: 1px solid yellow;
+    /* Top border */
+    border-bottom: 1px solid yellow;
+    /* Bottom border */
+    transform: scale(0, 1);
+    /* Start hidden */
+}
+
+/* For a complete clockwise effect, we need to adjust the hover */
+.box:hover::after {
+    transform: scale(1, 1);
+    /* Show the vertical borders */
+}
+
+.box:hover::before {
+    transform: scale(1, 1);
+    /* Show the horizontal borders */
+}
+
+/* To create the effect of drawing the border clockwise, we can add a delay to each side */
+.box:hover::after {
+    transition: all 0.5s ease 0s;
+    /* No delay */
+}
+
+.box:hover::before {
+    transition: all 0.5s ease 0.2s;
+    /* Slight delay for top/bottom */
 }

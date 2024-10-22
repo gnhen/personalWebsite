@@ -20,7 +20,7 @@
             /* Rounded corners */
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             /* Shadow for depth */
-            cursor: move;
+            cursor: grab;
             /* Change cursor to indicate draggable */
         }
     </style>
@@ -40,7 +40,7 @@
     <main>
         <div id="draggable">
             <h2>Get in Touch</h2>
-            <p>Email: <a href="mailto:gtnhen@gmail.com">gtnhen@gmail.com</a></p>
+            <p>Email: <a href="mailto:email@email.com">email@email.com</a></p>
         </div>
     </main>
 
@@ -48,47 +48,97 @@
         <p>&copy; 2024 Grant Hendricks. All rights reserved.</p>
     </footer>
 
-    <script src="scripts.js"></script>
     <script>
-        // Make the DIV element draggable
-        dragElement(document.getElementById("draggable"));
+        // Draggable functionality with momentum and bounce effect
+        const draggable = document.getElementById("draggable");
 
-        function dragElement(elmnt) {
-            let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        let isDragging = false;
+        let offset = { x: 0, y: 0 };
+        let speed = { x: 0, y: 0 }; // Speed in x and y directions
+        const friction = 0.99; // Friction for smooth stopping
+        let lastMousePosition = null;
+        let animationFrameId;
 
-            // Attach the mouse down event to the entire element
-            elmnt.onmousedown = dragMouseDown;
+        draggable.addEventListener('mousedown', (event) => {
+            event.preventDefault();
+            isDragging = true;
+            offset.x = event.clientX - draggable.getBoundingClientRect().left;
+            offset.y = event.clientY - draggable.getBoundingClientRect().top;
 
-            function dragMouseDown(e) {
-                e = e || window.event;
-                e.preventDefault();
-                // Get the mouse cursor position at startup
-                pos3 = e.clientX;
-                pos4 = e.clientY;
-                document.onmouseup = closeDragElement;
-                // Call a function whenever the cursor moves
-                document.onmousemove = elementDrag;
+            lastMousePosition = { x: event.clientX, y: event.clientY }; // Capture the last mouse position
+            speed.x = 0; // Reset speed on new drag
+            speed.y = 0;
+
+            cancelAnimationFrame(animationFrameId); // Stop momentum when dragging
+            draggable.style.cursor = 'grabbing'; // Change cursor to grabbing
+        });
+
+        document.addEventListener('mousemove', (event) => {
+            if (isDragging) {
+                // Calculate new position based on mouse movement
+                const x = event.clientX - offset.x;
+                const y = event.clientY - offset.y;
+
+                // Set position of the draggable element
+                draggable.style.left = `${Math.max(0, Math.min(x, window.innerWidth - draggable.offsetWidth))}px`;
+                draggable.style.top = `${Math.max(document.querySelector('header').offsetHeight,
+                    Math.min(y, window.innerHeight - document.querySelector('footer').offsetHeight - draggable.offsetHeight))}px`;
+
+                // Calculate speed based on mouse movement
+                speed.x = (event.clientX - lastMousePosition.x) * 0.5; // Adjust multiplier for sensitivity
+                speed.y = (event.clientY - lastMousePosition.y) * 0.5; // Adjust multiplier for sensitivity
+
+                lastMousePosition = { x: event.clientX, y: event.clientY }; // Update last mouse position
+            }
+        });
+
+        document.addEventListener('mouseup', () => {
+            isDragging = false; // Reset dragging state
+            draggable.style.cursor = 'grab'; // Reset cursor to grab
+
+            // Start updating position with speed
+            requestAnimationFrame(updatePosition);
+        });
+
+        function updatePosition() {
+            // Update position based on speed
+            const rect = draggable.getBoundingClientRect();
+            let newX = rect.left + speed.x;
+            let newY = rect.top + speed.y;
+
+            // Bounce off the walls
+            if (newX <= 0 || newX + rect.width >= window.innerWidth) {
+                speed.x *= -1; // Reverse speed on x axis
+                newX = Math.max(0, Math.min(newX, window.innerWidth - rect.width)); // Constrain position
+            }
+            if (newY <= document.querySelector('header').offsetHeight ||
+                newY + rect.height >= window.innerHeight - document.querySelector('footer').offsetHeight) {
+                speed.y *= -1; // Reverse speed on y axis
+                newY = Math.max(document.querySelector('header').offsetHeight,
+                    Math.min(newY, window.innerHeight - document.querySelector('footer').offsetHeight - rect.height)); // Constrain position
             }
 
-            function elementDrag(e) {
-                e = e || window.event;
-                e.preventDefault();
-                // Calculate the new cursor position
-                pos1 = pos3 - e.clientX;
-                pos2 = pos4 - e.clientY;
-                pos3 = e.clientX;
-                pos4 = e.clientY;
-                // Set the element's new position
-                elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-                elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+            // Update the position
+            draggable.style.left = `${newX}px`;
+            draggable.style.top = `${newY}px`;
+
+            // Apply friction to slow down
+            speed.x *= friction;
+            speed.y *= friction;
+
+            // If speed is too small, stop the animation
+            if (Math.abs(speed.x) < 0.1 && Math.abs(speed.y) < 0.1) {
+                return; // Stop the animation
             }
 
-            function closeDragElement() {
-                // Stop moving when mouse button is released
-                document.onmouseup = null;
-                document.onmousemove = null;
-            }
+            // Request next animation frame
+            animationFrameId = requestAnimationFrame(updatePosition);
         }
+
+        // Prevent default dragging behavior for the text inside
+        draggable.addEventListener('dragstart', (event) => {
+            event.preventDefault(); // Prevent text selection
+        });
     </script>
 </body>
 
