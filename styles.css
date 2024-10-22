@@ -328,3 +328,34 @@ main {
     width: 40px;
     height: 40px;
 }
+
+/* About Me page styling */
+.about-container {
+    background: #fff;
+    border-radius: 5px;
+    padding: 60px;
+    /* Increased padding */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    /* Center content */
+    margin: 20px auto;
+    /* Center the container on the page */
+    max-width: 1200px;
+    /* Increased max width */
+}
+
+/* Portrait Image Styling */
+.portrait {
+    width: 300px;
+    /* Increased width */
+    height: 300px;
+    /* Increased height */
+    border-radius: 50%;
+    /* Keep it circular */
+    margin: 0 auto;
+    /* Center the image */
+    display: block;
+    /* Ensure it is block level for centering */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* Optional shadow for effect */
+}
