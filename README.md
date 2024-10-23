@@ -1,4 +1,4 @@
-# Welcome to My Portfolio Website
+# Personal Portfolio Website
 
 This is my personal portfolio website, showcasing my projects, skills, and interests. It serves as a digital resume and provides an overview of my work in software development and cybersecurity.
 
@@ -15,7 +15,7 @@ This is my personal portfolio website, showcasing my projects, skills, and inter
 
 ## Overview
 
-My portfolio website is designed to highlight my skills, projects, and contact information. The site is built using HTML, CSS, and JavaScript, featuring a clean layout and interactive elements.
+My portfolio website is designed to highlight my skills, projects, and contact information. The site is built using HTML, CSS, and JavaScript, featuring a clean layout and interactive elements. 
 
 ## Pages
 
