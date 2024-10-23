@@ -80,6 +80,10 @@ const draggable = document.getElementById('draggable');
 let isDragging = false;
 let offset = { x: 0, y: 0 };
 
+// Set initial position to fixed
+draggable.style.position = 'fixed';
+draggable.style.zIndex = '1000'; // Ensure it is above other elements
+
 draggable.addEventListener('mousedown', (event) => {
     event.preventDefault(); // Prevent text highlighting
     isDragging = true;
@@ -161,7 +165,6 @@ function updateBackgroundColor(event) {
 // Add mousemove event listener
 window.addEventListener('mousemove', updateBackgroundColor);
 
-
 document.addEventListener("DOMContentLoaded", function () {
     var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     var viewAnyways = localStorage.getItem('viewAnyways');
@@ -171,4 +174,3 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = "mobile.html";
     }
 });
-
