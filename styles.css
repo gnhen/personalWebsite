@@ -561,7 +561,7 @@ main {
 }
 
 .buttonF {
-    background-color: rgb(3, 213, 224);
+    background-color: #5abaff;
     color: rgb(0, 0, 0);
     border: 2px solid rgb(0, 0, 0);
     border-radius: 10px;
@@ -591,4 +591,49 @@ main {
     font-size: 16px;
     cursor: pointer;
 
+}
+
+/* Fade-in from top to bottom */
+.fade-in {
+    opacity: 0;
+    transform: translateY(-10px);
+    /* Start slightly above the view */
+    animation: fadeInEffect 1s ease-out forwards;
+}
+
+
+@keyframes fadeInEffect {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+
+    }
+}
+
+.background {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+}
+
+.bg-page1 {
+    background-image: url('images/blue.jpg');
+}
+
+.bg-page2 {
+    background-image: url('images/quizbackground.png');
+}
+
+.bg-page3 {
+    background-image: url('images/lightbluebackground.png');
+}
+
+.bg-page4 {
+    background-image: url('images/volumebackground.png');
+}
+
+.bg-page5 {
+    background-image: url('path/to/page5-background.jpg');
 }
