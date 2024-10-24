@@ -619,21 +619,21 @@ main {
 }
 
 .bg-page1 {
-    background-image: url('images/blue.jpg');
+    background-color: #0026be;
 }
 
 .bg-page2 {
-    background-image: url('images/quizbackground.png');
+    background-color: #abb918;
 }
 
 .bg-page3 {
-    background-image: url('images/lightbluebackground.png');
+    background-color: #07f7ff;
 }
 
 .bg-page4 {
-    background-image: url('images/volumebackground.png');
+    background-color: #d408a1;
 }
 
 .bg-page5 {
-    background-image: url('path/to/page5-background.jpg');
+    background-color: #03c989;
 }
