@@ -133,34 +133,7 @@ function interpolateColor(color1, color2, factor) {
     };
 }
 
-// Function to calculate the background color based on mouse position
-function updateBackgroundColor(event) {
-    const width = window.innerWidth;
-    const mouseX = event.clientX;
 
-    // Calculate the percentage of the mouse position relative to the width
-    const percentage = mouseX / width;
-
-    let backgroundColor;
-
-    if (percentage < 0.5) {
-        // Interpolate between leftColor and middleColor
-        const factor = percentage * 2; // Scale 0-0.5 to 0-1
-        backgroundColor = interpolateColor(leftColor, middleColor, factor);
-    } else {
-        // Interpolate between middleColor and rightColor
-        const factor = (percentage - 0.5) * 2; // Scale 0.5-1 to 0-1
-        backgroundColor = interpolateColor(middleColor, rightColor, factor);
-    }
-
-    // Set the body background color
-    document.body.style.backgroundColor = `rgb(${backgroundColor.r}, ${backgroundColor.g}, ${backgroundColor.b})`;
-
-    // Update header and footer colors to be slightly darker
-    const headerFooterColor = `rgb(${Math.round(backgroundColor.r * 0.8)}, ${Math.round(backgroundColor.g * 0.8)}, ${Math.round(backgroundColor.b * 0.8)})`;
-    document.querySelector('header').style.backgroundColor = headerFooterColor;
-    document.querySelector('footer').style.backgroundColor = headerFooterColor;
-}
 
 // Add mousemove event listener
 window.addEventListener('mousemove', updateBackgroundColor);
