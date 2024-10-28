@@ -116,10 +116,10 @@ document.addEventListener('mouseup', () => {
 
 // Prevent default dragging behavior for the text inside
 draggable.addEventListener('dragstart', (event) => {
-    event.preventDefault(); // Prevent text selection
+    event.preventDefault();
 });
 
-// New code for background color change based on mouse position
+
 const leftColor = { r: 247, g: 116, b: 0 }; // FF7400
 const middleColor = { r: 0, g: 255, b: 0 }; // 00FF00
 const rightColor = { r: 255, g: 0, b: 144 }; // FF0090
