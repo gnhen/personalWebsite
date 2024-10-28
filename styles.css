@@ -215,9 +215,15 @@ body {
 }
 
 header {
+    display: flex;
+    flex-direction: column;
+    /* Stacks items vertically */
+    align-items: center;
+    /* Centers items horizontally */
+    justify-content: center;
+    /* Centers items vertically */
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.7);
-    /* Will be updated by JavaScript */
     color: white;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -227,8 +233,13 @@ nav ul {
     list-style: none;
     padding: 0;
     display: flex;
-    justify-content: center;
     gap: 20px;
+    justify-content: center;
+    /* Center links within the nav */
+}
+
+nav ul li {
+    display: inline;
 }
 
 nav ul li a {
@@ -241,11 +252,8 @@ footer {
     text-align: center;
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.7);
-    /* Will be updated by JavaScript */
     color: white;
-    position: relative;
-    bottom: 0;
-    width: 100vw;
+    width: 100%;
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -255,6 +263,7 @@ main {
     justify-content: center;
     align-items: center;
     flex-grow: 1;
+    text-align: center;
 }
 
 /* Style for the projects grid centered in the screen */
@@ -389,12 +398,9 @@ main {
 }
 
 .name {
-    margin-top: 20px;
-    /* Space between portrait and name */
+    margin-top: 20px; /* Adjust space between portrait and name */
     color: black;
-    /* Set color for the name */
     font-size: 1.5em;
-    /* Adjust font size as needed */
     text-align: center;
     /* Center the text */
 }
@@ -427,7 +433,6 @@ main {
 .contact-container h2,
 .contact-container p {
     margin: 0;
-    /* Remove margin for better positioning */
 }
 
 
@@ -636,4 +641,14 @@ main {
 
 .bg-page5 {
     background-color: #03c989;
+}
+
+.views-container {
+    margin-left: auto;
+    padding-right: 10px;
+}
+
+#views img {
+    width: 140px;
+    height: auto;
 }
