@@ -563,6 +563,16 @@ main {
 
 }
 
+.buttonP {
+    background-color: #ff6200;
+    color: #FFFFFF;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
 /* Fade-in from top to bottom */
 .fade-in {
     opacity: 0;
@@ -606,6 +616,10 @@ main {
 
 .bg-page5 {
     background-color: #03c989;
+}
+
+.bg-page6 {
+    background-color: #ff6200;
 }
 
 .views-container {
