@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Extras - Grant Hendricks</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/gh.png">
+    <meta property="og:image" content="images/gh.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Draggable.min.js"></script>
+</head>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+        var viewAnyways = localStorage.getItem('viewAnyways');
+
+        if (isMobile && viewAnyways !== 'true') {
+            window.location.href = "mobile2";
+        }
+    });
+</script>
+
+<body class="gradient trail-cursor-page">
+
+    <header>
+        <div class="icon"><img src="images/gh.png"></div>
+        <h1>Extras</h1>
+        <nav>
+            <ul>
+                <li><a href="index">Projects</a></li>
+                <li><a href="about">About Me</a></li>
+                <li><a href="contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="about-container">
+            <h2>This is my extras page! Find everything else that I have worked on below</h2>
+            <hr>
+            <ul style="text-align: left;">
+                <li><strong>Github Projects:</strong></li>
+                <br>
+                <p class="content"><a href="https://github.com/gnhen/Youtube-Hide-Shorts-and-Playables"
+                        target="_blank"><button class="buttonR">Hide Shorts & Playables on Youtube</button></a></p><br>
+                <p class="content"><a href="https://github.com/gnhen/webVulnerabilityScanner" target="_blank"><button
+                            class="buttonF">Web Vulnerability Scanner</button></a></p><br>
+                <p class="content"><a href="https://github.com/gnhen/findIP" target="_blank"><button
+                            class="buttonO">Find IPv4</button></a></p><br>
+                <p class="content"><a href="https://github.com/gnhen/customCSS" target="_blank"><button
+                            class="buttonP">Custom CSS Maker</button></a></p><br>
+                <li><strong>Available on CodePen:</strong></li>
+                <br>
+                <p class="content"><a href="https://codepen.io/gnhen/pen/ExqERmK" target="_blank"><button
+                            class="buttonR">Hide Shorts & Playables on Youtube</button></a></p><br>
+            </ul>
+
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Grant Hendricks. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
