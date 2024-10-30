@@ -11,6 +11,47 @@
     <meta property="og:image" content="images/gh.png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Draggable.min.js"></script>
+
+    <style>
+        header {
+            width: 100%;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            box-sizing: border-box;
+        }
+
+        header .icon img {
+            height: 40px;
+        }
+
+        header h1 {
+            margin: 10;
+            font-size: 2rem;
+        }
+
+        header nav ul {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        header nav ul li {
+            margin-left: 30px;
+            margin-bottom: 10px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+    </style>
+
 </head>
 
 <script>
@@ -21,10 +62,28 @@
         if (isMobile && viewAnyways !== 'true') {
             window.location.href = "mobile2";
         }
+
+        document.addEventListener('mousemove', (e) => {
+            const mouseX = e.clientX;
+            const windowWidth = window.innerWidth;
+            const percentage = (mouseX / windowWidth) * 100;
+
+            const colors = {
+                start: [255, 0, 0],       // Red
+                end: [255, 243, 0]        // Yellow
+            };
+
+            const finalColor = colors.start.map((start, i) =>
+                Math.round(start + (colors.end[i] - start) * (percentage / 100))
+            );
+
+            document.body.style.backgroundColor =
+                `rgb(${finalColor[0]}, ${finalColor[1]}, ${finalColor[2]})`;
+        });
     });
 </script>
 
-<body class="gradient trail-cursor-page">
+<body>
 
     <header>
         <div class="icon"><img src="images/gh.png"></div>
@@ -55,11 +114,11 @@
                             class="buttonP">Custom CSS Maker</button></a></p><br>
                 <li><strong>Available on CodePen:</strong></li>
                 <br>
+                <p class="content"><a href="https://codepen.io/gnhen/pen/bGXvZpb" target="_blank"><button
+                            class="buttonV">Scrolling Color Changer</button></a></p><br>
                 <p class="content"><a href="https://codepen.io/gnhen/pen/ExqERmK" target="_blank"><button
                             class="buttonR">Hide Shorts & Playables on Youtube</button></a></p><br>
             </ul>
-
-
         </div>
     </main>
 
