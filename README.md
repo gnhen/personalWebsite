@@ -38,6 +38,11 @@ My portfolio website is designed to highlight my skills, projects, and contact i
   - A draggable contact container for easy access to my contact information.
   - Links to my social media profiles and professional accounts.
 
+### Extras
+- **Description**: A page that hosts links to my extra projects that I couldn't justify being on the main page.
+- **Functionality**:
+  - A background color that changes depending on where the user's mouse is.
+
 ## Technologies Used
 
 - HTML
