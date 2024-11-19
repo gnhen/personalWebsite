@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Logo - Grant Hendricks</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/gh.png">
+    <meta property="og:image" content="images/gh.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Draggable.min.js"></script>
+</head>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+        var viewAnyways = localStorage.getItem('viewAnyways');
+
+        if (isMobile && viewAnyways !== 'true') {
+            window.location.href = "mobile2";
+        }
+    });
+</script>
+
+<style>
+    .border {
+        border: 2px solid black;
+    }
+</style>
+
+
+<body>
+    <header>
+        <div class="icon"><img src="images/gh.png"></div>
+        <h1>Logos</h1>
+        <nav>
+            <ul>
+                <li><a href="index">Projects</a></li>
+                <li><a href="contact">Contact</a></li>
+                <li><a href="extras">Extras</a></li>
+                <li><a href="resume">Resumé</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="about-container">
+
+            <img class="border" src="images/gh.png" width="50%vh">
+            <img class="border" src="images/bcfront.png" width="50%vh">
+            <img class="border" src="images/bcback.png" width="50%vh">
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Grant Hendricks. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
