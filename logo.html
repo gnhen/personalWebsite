@@ -13,17 +13,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Draggable.min.js"></script>
 </head>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        var isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-        var viewAnyways = localStorage.getItem('viewAnyways');
-
-        if (isMobile && viewAnyways !== 'true') {
-            window.location.href = "mobile2";
-        }
-    });
-</script>
-
 <style>
     .border {
         border: 2px solid black;
