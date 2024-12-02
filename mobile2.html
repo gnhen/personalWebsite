@@ -1,4 +1,3 @@
-<!-- mobile2.html -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,146 +5,160 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mobile View</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles2.css">
     <link rel="icon" href="images/gh.png">
     <meta property="og:image" content="images/gh.png">
+    <style>
+        .typing-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .typing-text {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin: 0;
+            white-space: pre-wrap;
+        }
+
+        @media (prefers-color-scheme: light) {
+            body {
+                background-color: #ffffff;
+                color: #213547;
+            }
+
+            .typing-container {
+                background: rgba(0, 0, 0, 0.05);
+            }
+        }
+    </style>
 </head>
 
-<header>
-    <div class="icon"><img src="images/gh.png"></div>
-    <h1>Grant Hendricks</h1>
-    <nav>
-    </nav>
-</header>
+<body style="background-color: white;" class="fade-in">
+    <div class="page-container">
+        <header>
+            <div class="icon"><img src="images/gh.png" alt="Icon"></div>
+            <h1>Grant Hendricks</h1>
+        </header>
 
-<body>
-    <main>
-        <div class="about-container">
+        <main>
+            <div style="text-align: center;">
+                <a href="/documents/resume.pdf" download></a>
+            </div>
             <div class="portrait-container">
                 <img src="images/portrait2.png" alt="Portrait of Grant Hendricks" class="portrait">
                 <h2 class="name">Grant Hendricks</h2>
+                <p class="content" align="center"><strong>
+                        <font size="+1">This is a simplified version of the desktop website. Please view on a
+                            computer for the full experience!</font>
+                    </strong></p>
+            </div>
+            <div class="typing-container">
+                <p id="typing-text" class="typing-text"></p>
+            </div>
 
-                <p class="content">
-                    <font size="+2"><strong>This is a simplified version of the desktop website.</strong></font>
+            <div class="dropdown-nav">
+                <p align="center" style="width: 100%;">
+                    <a href="/documents/resume.pdf" download style="width: 100%; display: block;">
+                        <button class="buttonR" style="width: 100%;">Download my Resumé</button>
+                    </a>
                 </p>
-            </div><br>
-            <p class="content">Hello, welcome to my website! Here, you can view my projects and find my contact
-                information!</p> <br>
-            <p class="content">I am a cybersecurity student with passion for aligning security architecture plans and
-                processes
-                with security
-                standards and business goals. I have <b>Extensive</b> experience developing and testing software.</p>
-            <br>
-            <p class="content">I am a student at Northern Kentucky University, and I expect to graduate in the Fall of
-                2026</p>
-            <br>
-            <p class="content">Skilled in areas of Web Design, Cybersecurity Analysis, Networking, Programming, iOS
-                Development, and more!
-            </p>
-            <br><br>
-            <p align="left">
-                <a href="/documents/resume.pdf" download>
-                    <button class="buttonR">Download my Resumé</button>
-                </a>
-            </p>
-            <br>
-            <p align="left">
-                <b>
-                    <font size="+2">My projects are listed below:</font>
-                </b>
-            </p>
-            <br>
-            <p align="left">
-                <a href="project/encrypt" target="_blank"><button class="buttonQ">
-                        File Encryption Tool</button></a>
-            </p>
-            <p align="left">
-                <a href="https://github.com/gnhen/File-Organizer" target="_blank"><button class="buttonR">
-                        Java File Organizer</button></a>
-            </p>
-            <p align="left"><a href="https://github.com/gnhen/File-Converter" target="_blank"><button
-                        class="button9">File Format Converter</button></a></p>
-            <p align="left"><a href="https://github.com/gnhen/Caeser-Cipher" target="_blank"><button
-                        class="button3">Caeser Cipher</button></a></p>
-            <p align="left"><a href="https://github.com/gnhen/FileTagging" target="_blank"><button class="button4">File
-                        Tagger</button></a></p>
-            <p align="left"><a href="https://github.com/gnhen/Website-Extractor" target="_blank"><button
-                        class="buttonO">Website Downloader</button></a></p>
-            <p align="left">
-                <a href="project/virustotalapi"><button class="buttonV">VirusTotal
-                        API</button></a>
-            </p>
-            <p align="left">
-                <a href="project/promo"><button class="buttonP">Promotion Generator</button></a>
-            </p>
-            <p align="left">
-                <a href="project/forcescreenshot"><button class="buttonF">Force
-                        Screenshot</button></a>
-            </p>
-            <p align="left">
-                <a href="project/browseraddons"><button class="buttonQ">My Browser Extensions
-                    </button></a>
-            </p>
-            <p align="left">
-                <a href="project/volumecontrol"><button class="buttonO">Volume
-                        Controller
-                    </button></a>
-            </p>
-            <br><br>
-            <p align="left">
-                <b>
-                    <font size="+2">Contact Me:</font>
-                </b>
-            </p>
-            <p align="left">
-                <a href="https://linkedin.com/in/gnhen" target="_blank">
-                    <button class="button3">
-                        LinkedIn
-                    </button>
-                </a>
-            </p>
-            <p align="left">
-                <a href="project/github">
-                    <button class="button4">
-                        Github
-                    </button>
-                </a>
-            </p>
+            </div>
 
-            <p align="left">
-                <a href="mailto:gtnhen@gmail.com" target="_blank">
-                    <button class="button2">
-                        Email
-                    </button>
-                </a>
-            </p>
+            <nav class="dropdown-nav projects-section">
+                <input id="projects-toggle" class="dropdown-toggle" type="checkbox" checked>
+                <h2 class="dropdown-header projects-header">My Projects</h2>
+                <ul>
+                    <li class="projects-option"><a href="project/encrypt">File Encryption Tool</a></li>
+                    <li class="projects-option"><a href="https://github.com/gnhen/File-Organizer">Java File
+                            Organizer</a>
+                    </li>
+                    <li class="projects-option"><a href="https://github.com/gnhen/File-Converter">File Format
+                            Converter</a>
+                    </li>
+                    <li class="projects-option"><a href="https://github.com/gnhen/Caeser-Cipher">Caesar Cipher</a></li>
+                    <li class="projects-option"><a href="https://github.com/gnhen/FileTagging">File Tagger</a></li>
+                    <li class="projects-option"><a href="https://github.com/gnhen/Website-Extractor">Website
+                            Downloader</a>
+                    </li>
+                    <li class="projects-option"><a href="project/virustotalapi">VirusTotal API</a></li>
+                    <li class="projects-option"><a href="project/promo">Promotion Generator</a></li>
+                    <li class="projects-option"><a href="project/forcescreenshot">Force Screenshot</a></li>
+                    <li class="projects-option"><a href="project/browseraddons">My Browser Extensions</a></li>
+                    <li class="projects-option"><a href="project/volumecontrol">Volume Controller</a></li>
+                </ul>
+            </nav>
 
-            <br>
-            <p align="left">
-                <b>
-                    <font size="+2">Extras:</font>
-                </b>
-            </p>
+            <nav class="dropdown-nav contact-section">
+                <input id="contact-toggle" class="dropdown-toggle" type="checkbox" checked>
+                <h2 class="dropdown-header contact-header">Contact Me</h2>
+                <ul>
+                    <li class="contact-option"><a href="https://linkedin.com/in/gnhen">LinkedIn</a></li>
+                    <li class="contact-option"><a href="project/github">Github</a></li>
+                    <li class="contact-option"><a href="mailto:gtnhen@gmail.com">Email</a></li>
+                </ul>
+            </nav>
 
+            <nav class="dropdown-nav extras-section">
+                <input id="extras-toggle" class="dropdown-toggle" type="checkbox" checked>
+                <h2 class="dropdown-header extras-header">Extras</h2>
+                <ul>
+                    <li class="extras-option"><a href="https://github.com/gnhen/Youtube-Hide-Shorts-and-Playables">Hide
+                            Shorts & Playables</a></li>
+                    <li class="extras-option"><a href="https://github.com/gnhen/webVulnerabilityScanner">Web
+                            Vulnerability Scanner</a></li>
+                    <li class="extras-option"><a href="https://github.com/gnhen/findIP">Find IPv4</a></li>
+                    <li class="extras-option"><a href="https://github.com/gnhen/customCSS">Custom CSS Maker</a></li>
+                    <li class="extras-option"><a href="https://codepen.io/gnhen/pen/bGXvZpb">Scrolling Color Changer</a>
+                    </li>
+                </ul>
+            </nav>
+        </main>
 
-            <p align="left"><a href="https://github.com/gnhen/Youtube-Hide-Shorts-and-Playables" target="_blank"><button
-                        class="buttonR">Hide Shorts & Playables on Youtube</button></a></p>
-            <p align="left"><a href="https://github.com/gnhen/webVulnerabilityScanner" target="_blank"><button
-                        class="buttonF">Web
-                        Vulnerability Scanner</button></a></p>
-            <p align="left"><a href="https://github.com/gnhen/findIP" target="_blank"><button class="buttonO">Find
-                        IPv4</button></a></p>
-            <p align="left"><a href="https://github.com/gnhen/customCSS" target="_blank"><button class="buttonP">Custom
-                        CSS Maker</button></a></p>
-            <p align="left"><a href="https://codepen.io/gnhen/pen/bGXvZpb" target="_blank"><button
-                        class="buttonV">Scrolling Color Changer</button></a></p>
-        </div>
-    </main>
+        <div class="footer-spacer"></div>
+        <footer>
+            <p>&copy; 2024 Grant Hendricks. All rights reserved.</p>
+        </footer>
+    </div>
+    <script>
+        class Typewriter {
+            constructor(element, text, speed = 50) {
+                this.element = element;
+                this.text = text;
+                this.speed = speed;
+                this.currentChar = 0;
+                this.isTyping = false;
+            }
 
-    <footer>
-        <p>&copy; 2024 Grant Hendricks. All rights reserved.</p>
-    </footer>
-    <script src="scripts.js"></script>
+            start() {
+                if (this.isTyping) return;
+                this.isTyping = true;
+                this.type();
+            }
+
+            type() {
+                if (this.currentChar < this.text.length) {
+                    this.element.textContent += this.text.charAt(this.currentChar);
+                    this.currentChar++;
+                    setTimeout(() => this.type(), this.speed);
+                } else {
+                    this.isTyping = false;
+                }
+            }
+        }
+
+        const text = `Hello, welcome to my website! Here, you can view my projects, my resumé, and my contact information! I am a cybersecurity student with passion for aligning security architecture plans and processes with security standards and business goals. I have Extensive experience developing and testing software. I am a student at Northern Kentucky University, and I expect to graduate in the Fall of 2026. I am skilled in areas of Web Design, Cybersecurity Analysis, Networking, Programming, iOS Development, and more! 
+        
+Thank you for vising my website!`;
+
+        const textElement = document.querySelector('#typing-text');
+        const typewriter = new Typewriter(textElement, text, 9);
+        typewriter.start();
+    </script>
 </body>
 
 </html>

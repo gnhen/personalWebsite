@@ -63,7 +63,7 @@ document.addEventListener('mouseup', () => {
             spinSpeed = 0; // Reset spin speed
             return;
         }
-        spinSpeed *= 0.95; // Gradually slow down the speed
+        spinSpeed *= 0.98; // Gradually slow down the speed
         currentAngleY += spinSpeed; // Update the current angle for horizontal
         currentAngleX += spinSpeed * 0.5; // Optional: Adjust for vertical as well if desired
         portrait.style.transform = `rotateY(${currentAngleY}deg) rotateX(${currentAngleX}deg)`; // Apply rotation
@@ -139,12 +139,67 @@ function interpolateColor(color1, color2, factor) {
 window.addEventListener('mousemove', updateBackgroundColor);
 
 document.addEventListener("DOMContentLoaded", function () {
+    // Mobile check
     var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     var viewAnyways = localStorage.getItem('viewAnyways');
 
-    // Check if on mobile and the user hasn't chosen to view the full site
     if (isMobile && viewAnyways !== 'true') {
         window.location.href = "mobile.html";
     }
+
+    // Dropdown functionality
+    const dropdownBtns = document.querySelectorAll(".dropdown-btn");
+
+    dropdownBtns.forEach(btn => {
+        btn.addEventListener("click", function () {
+            // Toggle active class
+            this.classList.toggle("active");
+
+            // Get dropdown content
+            const dropdownContent = this.nextElementSibling;
+
+            // Toggle display
+            dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+        });
+    });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    var dropdowns = document.getElementsByClassName("dropdown-btn");
+
+    for (var i = 0; i < dropdowns.length; i++) {
+        dropdowns[i].addEventListener("click", function () {
+            // Toggle active class
+            this.classList.toggle("active");
+
+            // Get the next element (dropdown content)
+            var dropdownContent = this.nextElementSibling;
+
+            // Toggle display
+            if (dropdownContent.style.display === "block" || dropdownContent.style.display === "") {
+                dropdownContent.style.display = "none";
+            } else {
+                dropdownContent.style.display = "block";
+            }
+        });
+    }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const dropdownButtons = document.querySelectorAll(".dropdown-btn");
+
+    dropdownButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            this.classList.toggle("active");
+            const dropdownContent = this.nextElementSibling;
+
+            if (dropdownContent.style.maxHeight) {
+                dropdownContent.style.maxHeight = null;
+            } else {
+                dropdownContent.style.maxHeight = dropdownContent.scrollHeight + "px";
+            }
+        });
+    });
+});
+
 
