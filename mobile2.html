@@ -9,6 +9,23 @@
     <link rel="icon" href="images/gh.png">
     <meta property="og:image" content="images/gh.png">
     <style>
+        .buttonR {
+            background-color: #02caed;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 19px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+            height: 40px;
+            line-height: 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
         .typing-container {
             max-width: 800px;
             margin: 0 auto;
@@ -61,7 +78,7 @@
                 <p id="typing-text" class="typing-text"></p>
             </div>
 
-            <div class="dropdown-nav">
+            <div class="dropdown-nav" style="margin-bottom: 0rem !important;">
                 <p align="center" style="width: 100%;">
                     <a href="/documents/resume.pdf" download style="width: 100%; display: block;">
                         <button class="buttonR" style="width: 100%;">Download my Resumé</button>
@@ -156,7 +173,7 @@
 Thank you for vising my website!`;
 
         const textElement = document.querySelector('#typing-text');
-        const typewriter = new Typewriter(textElement, text, 9);
+        const typewriter = new Typewriter(textElement, text, 15);
         typewriter.start();
     </script>
 </body>
