@@ -593,6 +593,16 @@ main {
     cursor: pointer;
 }
 
+.buttonGreen {
+    background-color: #04581c;
+    color: #FFFFFF;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
 /* Fade-in from top to bottom */
 .fade-in {
     opacity: 0;
@@ -646,6 +656,10 @@ main {
     background-color: #a80000;
 }
 
+.bg-page8 {
+    background-color: #023a12;
+}
+
 .views-container {
     margin-left: auto;
     padding-right: 10px;
@@ -660,5 +674,5 @@ main {
     background: linear-gradient(to bottom, #06d8e7, #039f41);
     min-height: 100vh;
     margin: 0;
-    padding 0;
+    padding: 0;
 }
